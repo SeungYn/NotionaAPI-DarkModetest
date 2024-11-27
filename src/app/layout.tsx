@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ThemeContextProvider from '@/context/ThemeContextProvider';
 
 // const geistSans = localFont({
 //   src: './fonts/GeistVF.woff',
@@ -27,11 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={''}>
-        <Header />
-        <div>{children}</div>
-        <Footer />
-      </body>
+      <ThemeContextProvider>
+        <body className={''}>
+          <Header />
+          <div>{children}</div>
+          <Footer />
+        </body>
+      </ThemeContextProvider>
     </html>
   );
 }
