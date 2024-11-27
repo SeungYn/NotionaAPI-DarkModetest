@@ -29,9 +29,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <ThemeContextProvider>
-        <body className={'bg-white dark:bg-black transition-colors'}>
+        <body className={'bg-primary transition-colors'}>
           <Header />
-          <div className='dark:bg-black'>{children}</div>
+          <div>{children}</div>
           <Footer />
         </body>
       </ThemeContextProvider>
